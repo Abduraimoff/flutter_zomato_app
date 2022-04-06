@@ -2,6 +2,7 @@ import 'package:dots_indicator/dots_indicator.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:zomato_app/app_color.dart';
+import 'package:zomato_app/data/food_model.dart';
 import 'package:zomato_app/widgets/data_search.dart';
 import 'package:zomato_app/widgets/food_card.dart';
 import 'package:zomato_app/widgets/food_list_view.dart';
@@ -16,6 +17,7 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
+  final List<Food> listFoods = foods;
   PageController pageController = PageController();
   var _currentPageValue = 0.0;
 
@@ -115,8 +117,18 @@ class _HomePageState extends State<HomePage> {
             ),
           ),
           const SizedBox(height: 20),
-          const FoodCard(),
-          const FoodCard(),
+          SingleChildScrollView(
+            child: ListView.builder(
+              physics: NeverScrollableScrollPhysics(),
+              shrinkWrap: true,
+              itemCount: listFoods.length - 3,
+              itemBuilder: (context, index) {
+                return FoodCard(
+                  food: listFoods[index],
+                );
+              },
+            ),
+          )
         ],
       ),
     );

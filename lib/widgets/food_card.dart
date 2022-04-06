@@ -1,10 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:zomato_app/app_color.dart';
+import 'package:zomato_app/data/food_model.dart';
 
 class FoodCard extends StatelessWidget {
+  final Food food;
   const FoodCard({
     Key? key,
+    required this.food,
   }) : super(key: key);
 
   @override
@@ -16,7 +19,7 @@ class FoodCard extends StatelessWidget {
         decoration: BoxDecoration(
             color: Colors.white,
             borderRadius: BorderRadius.circular(24),
-            boxShadow: [
+            boxShadow: const [
               BoxShadow(
                 color: Colors.black,
                 offset: Offset(1, 1),
@@ -29,12 +32,13 @@ class FoodCard extends StatelessWidget {
             Container(
               height: 200,
               decoration: BoxDecoration(
-                borderRadius: BorderRadius.only(
+                borderRadius: const BorderRadius.only(
                   topLeft: Radius.circular(24),
                   topRight: Radius.circular(24),
                 ),
                 image: DecorationImage(
-                  image: AssetImage('assets/images/food5.jpg'),
+                  filterQuality: FilterQuality.low,
+                  image: AssetImage(food.imageUrl),
                   fit: BoxFit.cover,
                 ),
               ),
@@ -67,7 +71,7 @@ class FoodCard extends StatelessWidget {
                       height: 34,
                       width: 34,
                       padding: const EdgeInsets.all(7),
-                      decoration: BoxDecoration(
+                      decoration: const BoxDecoration(
                         color: Colors.white,
                         shape: BoxShape.circle,
                       ),
@@ -94,8 +98,8 @@ class FoodCard extends StatelessWidget {
                           ),
                           const SizedBox(width: 5),
                           Text(
-                            '70% OFF',
-                            style: TextStyle(
+                            '${food.discount}% OFF',
+                            style: const TextStyle(
                               color: Colors.white,
                               fontSize: 13,
                               fontWeight: FontWeight.w600,
@@ -127,8 +131,8 @@ class FoodCard extends StatelessWidget {
                           Padding(
                             padding: const EdgeInsets.only(top: 2),
                             child: Text(
-                              '25 mins',
-                              style: TextStyle(
+                              '${food.deliveryTime} mins',
+                              style: const TextStyle(
                                 fontSize: 13,
                                 fontWeight: FontWeight.w600,
                               ),
@@ -147,9 +151,9 @@ class FoodCard extends StatelessWidget {
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  const Text(
-                    'Sultan Kacchi Biryani',
-                    style: TextStyle(
+                  Text(
+                    food.name,
+                    style: const TextStyle(
                       fontSize: 23,
                       fontWeight: FontWeight.w600,
                     ),
@@ -161,16 +165,16 @@ class FoodCard extends StatelessWidget {
                       borderRadius: BorderRadius.circular(6),
                     ),
                     child: Row(
-                      children: const [
+                      children: [
                         Text(
-                          '4.3',
-                          style: TextStyle(
+                          '${food.stars}',
+                          style: const TextStyle(
                             fontSize: 13,
                             fontWeight: FontWeight.w600,
                             color: Colors.white,
                           ),
                         ),
-                        Icon(
+                        const Icon(
                           Icons.star,
                           color: Colors.yellow,
                           size: 15,
@@ -186,15 +190,15 @@ class FoodCard extends StatelessWidget {
               padding: const EdgeInsets.symmetric(horizontal: 20),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: const [
+                children: [
                   Text(
-                    'Biryani, Desserts, Kacchi',
-                    style: TextStyle(
+                    food.name,
+                    style: const TextStyle(
                       fontSize: 13,
                       fontWeight: FontWeight.w400,
                     ),
                   ),
-                  Text(
+                  const Text(
                     'Price Range 250-550',
                     style: TextStyle(
                       fontSize: 13,

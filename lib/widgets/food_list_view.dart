@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:zomato_app/data/food_model.dart';
 
 class FoodListView extends StatelessWidget {
   const FoodListView({
@@ -7,10 +8,11 @@ class FoodListView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final List<Food> listFoods = foods;
     return SizedBox(
       height: 105,
       child: ListView.builder(
-        itemCount: 8,
+        itemCount: listFoods.length,
         scrollDirection: Axis.horizontal,
         itemBuilder: (context, index) {
           return Column(
@@ -25,15 +27,15 @@ class FoodListView extends StatelessWidget {
                   color: Colors.grey,
                   image: DecorationImage(
                     filterQuality: FilterQuality.high,
-                    image: AssetImage('assets/images/food6.jpg'),
+                    image: AssetImage(listFoods[index].imageUrl),
                     fit: BoxFit.cover,
                   ),
                 ),
               ),
               const SizedBox(height: 8),
               Text(
-                'Home style',
-                style: TextStyle(
+                listFoods[index].name,
+                style: const TextStyle(
                   fontSize: 13,
                   fontWeight: FontWeight.w600,
                 ),

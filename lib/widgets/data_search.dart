@@ -69,7 +69,7 @@ class DataSearch extends SearchDelegate<String> {
                       text: suggestionList[index].substring(query.length),
                       style: const TextStyle(
                         color: Colors.grey,
-                      ))
+                      ),),
                 ],
               ),
             ),
