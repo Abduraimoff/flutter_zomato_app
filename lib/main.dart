@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:zomato_app/pages/home_page.dart';
 import 'package:zomato_app/pages/root_page.dart';
 
 void main() {

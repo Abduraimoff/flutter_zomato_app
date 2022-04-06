@@ -58,7 +58,7 @@ List<Food> foods = [
     isPromoted: true,
   ),
   Food(
-    imageUrl: 'assets/images/food5.jpg',
+    imageUrl: 'assets/images/food1.jpg',
     name: 'Momos',
     description:
         'Momo is a type of steamed dumpling with some form of filling, most commonly beef and it is originally from Tibet. Momo has become a delicacy in Nepal and Tibetan communities in Bhutan, as well as people of the Indian regions of Darjeeling, Ladakh, Sikkim, Assam, Uttarakhand, Himachal Pradesh and Arunachal Pradesh.',
