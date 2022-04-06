@@ -119,7 +119,7 @@ class _HomePageState extends State<HomePage> {
           const SizedBox(height: 20),
           SingleChildScrollView(
             child: ListView.builder(
-              physics: NeverScrollableScrollPhysics(),
+              physics: const NeverScrollableScrollPhysics(),
               shrinkWrap: true,
               itemCount: listFoods.length - 3,
               itemBuilder: (context, index) {

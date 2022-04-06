@@ -141,7 +141,7 @@ class FoodCard extends StatelessWidget {
                         ],
                       ),
                     ),
-                  )
+                  ),
                 ],
               ),
             ),
