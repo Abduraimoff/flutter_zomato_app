@@ -6,6 +6,9 @@ class Food {
   final int deliveryTime;
   final int discount;
   final bool isPromoted;
+  final int id;
+  int amount = 0;
+  final double price;
 
   Food({
     required this.imageUrl,
@@ -15,6 +18,8 @@ class Food {
     required this.deliveryTime,
     required this.discount,
     this.isPromoted = false,
+    required this.id,
+    required this.price,
   });
 }
 
@@ -28,6 +33,8 @@ List<Food> foods = [
     deliveryTime: 25,
     discount: 20,
     isPromoted: true,
+    id: 1,
+    price: 14.99,
   ),
   Food(
     imageUrl: 'assets/images/food2.jpg',
@@ -37,6 +44,8 @@ List<Food> foods = [
     stars: 4.4,
     deliveryTime: 32,
     discount: 60,
+    id: 2,
+    price: 8.99,
   ),
   Food(
     imageUrl: 'assets/images/food3.jpg',
@@ -46,6 +55,8 @@ List<Food> foods = [
     stars: 3.0,
     deliveryTime: 10,
     discount: 10,
+    id: 3,
+     price: 14.00,
   ),
   Food(
     imageUrl: 'assets/images/food4.jpg',
@@ -56,6 +67,8 @@ List<Food> foods = [
     deliveryTime: 15,
     discount: 75,
     isPromoted: true,
+    id: 4,
+     price: 12.99,
   ),
   Food(
     imageUrl: 'assets/images/food1.jpg',
@@ -66,6 +79,8 @@ List<Food> foods = [
     deliveryTime: 45,
     discount: 35,
     isPromoted: true,
+    id: 5,
+        price: 4.99,
   ),
   Food(
     imageUrl: 'assets/images/food6.jpg',
@@ -76,6 +91,8 @@ List<Food> foods = [
     deliveryTime: 55,
     discount: 5,
     isPromoted: false,
+    id: 6,
+     price: 6.99,
   ),
   Food(
     imageUrl: 'assets/images/food7.jpg',
@@ -86,5 +103,7 @@ List<Food> foods = [
     deliveryTime: 35,
     discount: 25,
     isPromoted: false,
+    id: 7,
+    price: 17.99,
   ),
 ];
