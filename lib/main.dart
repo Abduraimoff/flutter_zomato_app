@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:zomato_app/pages/detail_page.dart';
 import 'package:zomato_app/pages/root_page.dart';
 
 void main() {
@@ -12,7 +13,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return const MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: RootPage(),
+      home: DetailPage(),
       routes: {},
     );
   }
