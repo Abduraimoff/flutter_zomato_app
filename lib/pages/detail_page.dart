@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:zomato_app/app_color.dart';
+import 'package:zomato_app/data/food_model.dart';
 import 'package:zomato_app/widgets/price_widget.dart';
 
 class DetailPage extends StatelessWidget {
-  const DetailPage({Key? key}) : super(key: key);
+  final Food food;
+  const DetailPage({Key? key, required this.food}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -12,21 +14,34 @@ class DetailPage extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Container(
-              height: 300,
-              decoration: BoxDecoration(
-                image: DecorationImage(
-                  image: AssetImage('assets/images/food3.jpg'),
-                  fit: BoxFit.cover,
-                  filterQuality: FilterQuality.low,
+            Stack(
+              children: [
+                Container(
+                  height: 300,
+                  decoration: BoxDecoration(
+                    image: DecorationImage(
+                      image: AssetImage(food.imageUrl),
+                      fit: BoxFit.cover,
+                      filterQuality: FilterQuality.low,
+                    ),
+                  ),
                 ),
-              ),
+                IconButton(
+                  onPressed: () {
+                    Navigator.pop(context);
+                  },
+                  icon: const Icon(
+                    Icons.arrow_back_ios_rounded,
+                    color: Colors.black,
+                  ),
+                ),
+              ],
             ),
             const SizedBox(height: 20),
             Center(
               child: Text(
-                'Hamburger',
-                style: TextStyle(
+                food.name,
+                style:const TextStyle(
                   fontSize: 25,
                   fontWeight: FontWeight.w700,
                 ),
@@ -39,8 +54,8 @@ class DetailPage extends StatelessWidget {
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 20),
               child: Text(
-                'Healthy foods are those that provide you with the nutrients you need to sustain your body`s well-being and retain energy. Water, carbohydrates, fat, protein, vitamins, and minerals are the key nutrients that make up a healthy, balanced diet.',
-                style: TextStyle(
+                food.description,
+                style: const TextStyle(
                   fontSize: 16,
                 ),
                 maxLines: 3,
@@ -48,7 +63,7 @@ class DetailPage extends StatelessWidget {
               ),
             ),
             const SizedBox(height: 25),
-            PriceWidget(),
+            PriceWidget(food: food),
           ],
         ),
       ),

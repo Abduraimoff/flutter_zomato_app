@@ -8,6 +8,7 @@ import 'package:zomato_app/widgets/food_card.dart';
 import 'package:zomato_app/widgets/food_list_view.dart';
 import 'package:zomato_app/widgets/home_slider.dart';
 import 'package:zomato_app/widgets/location_widget.dart';
+import 'package:zomato_app/pages/detail_page.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -125,6 +126,13 @@ class _HomePageState extends State<HomePage> {
               itemBuilder: (context, index) {
                 return FoodCard(
                   food: listFoods[index],
+                  press: () {
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) =>
+                                DetailPage(food: listFoods[index],),),);
+                  },
                 );
               },
             ),

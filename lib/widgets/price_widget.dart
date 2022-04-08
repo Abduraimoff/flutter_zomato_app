@@ -1,8 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:zomato_app/data/food_model.dart';
 
 class PriceWidget extends StatelessWidget {
+  final Food food;
   const PriceWidget({
     Key? key,
+    required this.food,
   }) : super(key: key);
 
   @override
@@ -15,7 +18,7 @@ class PriceWidget extends StatelessWidget {
           Container(
             padding: EdgeInsets.zero,
             decoration: BoxDecoration(
-              border:const Border(
+              border: const Border(
                 bottom: BorderSide(color: Colors.black),
                 left: BorderSide(color: Colors.black),
                 right: BorderSide(color: Colors.black),
@@ -34,7 +37,7 @@ class PriceWidget extends StatelessWidget {
                   splashRadius: 1,
                 ),
                 Text(
-                  '3',
+                  '${food.amount}',
                   style: const TextStyle(
                     fontSize: 20,
                     fontWeight: FontWeight.w500,
@@ -51,7 +54,7 @@ class PriceWidget extends StatelessWidget {
             ),
           ),
           Text(
-            '\$34.97',
+            '\$${food.price}',
             style: const TextStyle(
               fontSize: 30,
               fontWeight: FontWeight.bold,
