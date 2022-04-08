@@ -10,62 +10,70 @@ class DetailPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: SafeArea(
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Stack(
-              children: [
-                Container(
-                  height: 300,
+      body: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Stack(
+            children: [
+              Container(
+                height: 350,
+                decoration: BoxDecoration(
+                  image: DecorationImage(
+                    image: AssetImage(food.imageUrl),
+                    fit: BoxFit.cover,
+                    filterQuality: FilterQuality.low,
+                  ),
+                ),
+              ),
+              Positioned(
+                top: 30,
+                left: 10,
+                child: Container(
                   decoration: BoxDecoration(
-                    image: DecorationImage(
-                      image: AssetImage(food.imageUrl),
-                      fit: BoxFit.cover,
-                      filterQuality: FilterQuality.low,
+                    color: AppColor.kRedColor,
+                    borderRadius: BorderRadius.circular(40),
+                  ),
+                  child: IconButton(
+                    onPressed: () {
+                      Navigator.pop(context);
+                    },
+                    icon: const Icon(
+                      Icons.arrow_back_ios_rounded,
+                      color: Colors.white,
                     ),
                   ),
                 ),
-                IconButton(
-                  onPressed: () {
-                    Navigator.pop(context);
-                  },
-                  icon: const Icon(
-                    Icons.arrow_back_ios_rounded,
-                    color: Colors.black,
-                  ),
-                ),
-              ],
-            ),
-            const SizedBox(height: 20),
-            Center(
-              child: Text(
-                food.name,
-                style:const TextStyle(
-                  fontSize: 25,
-                  fontWeight: FontWeight.w700,
-                ),
-                overflow: TextOverflow.ellipsis,
-                maxLines: 1,
-                textAlign: TextAlign.center,
               ),
-            ),
-            const SizedBox(height: 10),
-            Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 20),
-              child: Text(
-                food.description,
-                style: const TextStyle(
-                  fontSize: 16,
-                ),
-                maxLines: 3,
-                overflow: TextOverflow.ellipsis,
+            ],
+          ),
+          const SizedBox(height: 20),
+          Center(
+            child: Text(
+              food.name,
+              style: const TextStyle(
+                fontSize: 25,
+                fontWeight: FontWeight.w700,
               ),
+              overflow: TextOverflow.ellipsis,
+              maxLines: 1,
+              textAlign: TextAlign.center,
             ),
-            const SizedBox(height: 25),
-            PriceWidget(food: food),
-          ],
-        ),
+          ),
+          const SizedBox(height: 10),
+          Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 20),
+            child: Text(
+              food.description,
+              style: const TextStyle(
+                fontSize: 16,
+              ),
+              maxLines: 3,
+              overflow: TextOverflow.ellipsis,
+            ),
+          ),
+          const SizedBox(height: 25),
+          PriceWidget(food: food),
+        ],
       ),
       bottomNavigationBar: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),

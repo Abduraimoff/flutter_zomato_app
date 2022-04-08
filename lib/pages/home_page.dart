@@ -128,10 +128,13 @@ class _HomePageState extends State<HomePage> {
                   food: listFoods[index],
                   press: () {
                     Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                            builder: (context) =>
-                                DetailPage(food: listFoods[index],),),);
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => DetailPage(
+                          food: listFoods[index],
+                        ),
+                      ),
+                    );
                   },
                 );
               },
