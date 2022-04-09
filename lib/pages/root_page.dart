@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:zomato_app/data/icons_data.dart';
+import 'package:zomato_app/pages/cart_page.dart';
 import 'package:zomato_app/pages/home_page.dart';
 
 class RootPage extends StatefulWidget {
@@ -16,7 +17,7 @@ class _RootPageState extends State<RootPage> {
     HomePage(),
     Center(child: Text('Go Out')),
     Center(child: Text('Pro')),
-    Center(child: Text('GROCERY')),
+    CartPage(),
     Center(child: Text('Profile')),
   ];
 

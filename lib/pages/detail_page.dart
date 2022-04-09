@@ -3,7 +3,6 @@ import 'package:provider/provider.dart';
 import 'package:zomato_app/app_color.dart';
 import 'package:zomato_app/data/food_model.dart';
 import 'package:zomato_app/providers/cart_provider.dart';
-import 'package:zomato_app/widgets/price_widget.dart';
 
 class DetailPage extends StatefulWidget {
   final Food food;
