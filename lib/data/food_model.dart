@@ -7,7 +7,7 @@ class Food {
   final int discount;
   final bool isPromoted;
   final int id;
-  int amount = 0;
+  int amount = 1;
   final double price;
 
   Food({
@@ -56,7 +56,7 @@ List<Food> foods = [
     deliveryTime: 10,
     discount: 10,
     id: 3,
-     price: 14.00,
+    price: 14.00,
   ),
   Food(
     imageUrl: 'assets/images/food4.jpg',
@@ -68,7 +68,7 @@ List<Food> foods = [
     discount: 75,
     isPromoted: true,
     id: 4,
-     price: 12.99,
+    price: 12.99,
   ),
   Food(
     imageUrl: 'assets/images/food1.jpg',
@@ -80,7 +80,7 @@ List<Food> foods = [
     discount: 35,
     isPromoted: true,
     id: 5,
-        price: 4.99,
+    price: 4.99,
   ),
   Food(
     imageUrl: 'assets/images/food6.jpg',
@@ -92,7 +92,7 @@ List<Food> foods = [
     discount: 5,
     isPromoted: false,
     id: 6,
-     price: 6.99,
+    price: 6.99,
   ),
   Food(
     imageUrl: 'assets/images/food7.jpg',

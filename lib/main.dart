@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 import 'package:zomato_app/pages/detail_page.dart';
 import 'package:zomato_app/pages/root_page.dart';
+import 'package:zomato_app/providers/cart_provider.dart';
 
 void main() {
   runApp(const MyApp());
@@ -11,12 +13,15 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      home: const RootPage(),
-      routes: {
-        
-      },
+    return MultiProvider(
+      providers: [
+        ChangeNotifierProvider.value(value: CartProvider()),
+      ],
+      child: const MaterialApp(
+        debugShowCheckedModeBanner: false,
+        home: RootPage(),
+        routes: {},
+      ),
     );
   }
 }

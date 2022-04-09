@@ -1,4 +1,3 @@
-
 import 'package:flutter/foundation.dart';
 import 'package:zomato_app/data/food_model.dart';
 
@@ -25,5 +24,16 @@ class CartProvider with ChangeNotifier {
   removeFood(food){
     _food.remove(food);
     notifyListeners();
+  }
+
+
+  double getTotalPrice(){
+    double total = 0;
+    if(_food != null){
+      _food.forEach((f){
+        total += f.amount * f.price;
+      });
+    }
+    return total;
   }
 }
