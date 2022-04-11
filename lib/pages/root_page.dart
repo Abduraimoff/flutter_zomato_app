@@ -18,7 +18,7 @@ class _RootPageState extends State<RootPage> {
     Center(child: Text('Go Out')),
     Center(child: Text('Pro')),
     CartPage(),
-    Center(child: Text('Profile')),
+    Center(child: Text('Nutrition')),
   ];
 
   @override

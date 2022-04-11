@@ -1,5 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_slidable/flutter_slidable.dart';
+import 'package:provider/provider.dart';
 import 'package:zomato_app/data/food_model.dart';
+import 'package:zomato_app/pages/detail_page.dart';
+import 'package:zomato_app/providers/cart_provider.dart';
 
 class CartTile extends StatelessWidget {
   final Food food;
@@ -11,6 +15,16 @@ class CartTile extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ListTile(
+      onTap: () {
+        Navigator.push(
+          context,
+          MaterialPageRoute(
+            builder: (context) => DetailPage(
+              food: food,
+            ),
+          ),
+        );
+      },
       leading: Container(
         width: 55,
         height: 55,

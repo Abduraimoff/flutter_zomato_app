@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_slidable/flutter_slidable.dart';
 import 'package:provider/provider.dart';
 import 'package:zomato_app/app_color.dart';
 
@@ -53,7 +54,7 @@ class CartPage extends StatelessWidget {
                   ),
                 ),
                 Text(
-                  '\$${context.watch<CartProvider>().getTotalPrice()}',
+                  '\$${context.watch<CartProvider>().getTotalPrice().toStringAsFixed(2)}',
                   style: const TextStyle(
                     fontSize: 22,
                     color: AppColor.kyCoalColor,

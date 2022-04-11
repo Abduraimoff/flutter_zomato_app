@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:zomato_app/app_color.dart';
 import 'package:zomato_app/data/food_model.dart';
+import 'package:zomato_app/pages/profile_page.dart';
 import 'package:zomato_app/widgets/data_search.dart';
 import 'package:zomato_app/widgets/food_card.dart';
 import 'package:zomato_app/widgets/food_list_view.dart';
@@ -200,10 +201,19 @@ class _HomePageState extends State<HomePage> {
                   color: AppColor.kRedColor,
                 ),
               ),
-              const CircleAvatar(
-                backgroundColor: Colors.grey,
-                radius: 25,
-                backgroundImage: AssetImage('assets/images/food1.jpg'),
+              GestureDetector(
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => const ProfilePage()),
+                  );
+                },
+                child: const CircleAvatar(
+                  backgroundColor: Colors.grey,
+                  radius: 25,
+                  backgroundImage: AssetImage('assets/images/food1.jpg'),
+                ),
               ),
             ],
           )
