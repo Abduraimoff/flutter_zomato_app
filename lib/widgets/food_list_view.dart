@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:zomato_app/data/food_model.dart';
+import 'package:zomato_app/pages/detail_page.dart';
 
 class FoodListView extends StatelessWidget {
   const FoodListView({
@@ -18,17 +19,28 @@ class FoodListView extends StatelessWidget {
           return Column(
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
-              Container(
-                width: 80,
-                height: 80,
-                margin: EdgeInsets.only(right: 15, left: index == 0 ? 20 : 0),
-                decoration: BoxDecoration(
-                  shape: BoxShape.circle,
-                  color: Colors.grey,
-                  image: DecorationImage(
-                    filterQuality: FilterQuality.high,
-                    image: AssetImage(listFoods[index].imageUrl),
-                    fit: BoxFit.cover,
+              GestureDetector(
+                onTap: () {
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => DetailPage(
+                          food: listFoods[index],
+                        ),
+                      ));
+                },
+                child: Container(
+                  width: 80,
+                  height: 80,
+                  margin: EdgeInsets.only(right: 15, left: index == 0 ? 20 : 0),
+                  decoration: BoxDecoration(
+                    shape: BoxShape.circle,
+                    color: Colors.grey,
+                    image: DecorationImage(
+                      filterQuality: FilterQuality.high,
+                      image: AssetImage(listFoods[index].imageUrl),
+                      fit: BoxFit.cover,
+                    ),
                   ),
                 ),
               ),
