@@ -44,6 +44,16 @@ class ProfilePage extends StatelessWidget {
               icon: 'assets/icons/calendar.svg',
               title: 'Booking',
             ),
+            Center(
+              child: Card(
+                child: Padding(
+                  padding: EdgeInsets.all(8.0),
+                  child: Text('Sign Out',
+                      style:
+                          TextStyle(fontSize: 15, fontWeight: FontWeight.w600)),
+                ),
+              ),
+            )
           ],
         ),
       ),
