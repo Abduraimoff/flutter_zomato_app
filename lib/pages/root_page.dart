@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:zomato_app/data/icons_data.dart';
 import 'package:zomato_app/pages/cart_page.dart';
 import 'package:zomato_app/pages/home_page.dart';
@@ -29,18 +30,18 @@ class _RootPageState extends State<RootPage> {
 
   Widget getBottomNavBar() {
     return Container(
-      height: 70,
+      height: 70.h,
       decoration: BoxDecoration(
         color: Colors.white,
         border: Border(
           top: BorderSide(
-            width: 1,
+            width: 1.w,
             color: Colors.grey.withOpacity(.7),
           ),
         ),
       ),
       child: Padding(
-        padding: const EdgeInsets.only(top: 5),
+        padding: EdgeInsets.only(top: 5.h),
         child: Row(
           crossAxisAlignment: CrossAxisAlignment.start,
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,

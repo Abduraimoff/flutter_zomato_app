@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_slidable/flutter_slidable.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:provider/provider.dart';
 import 'package:zomato_app/app_color.dart';
 
@@ -16,9 +16,9 @@ class CartPage extends StatelessWidget {
         backgroundColor: Colors.transparent,
         elevation: 0,
         centerTitle: false,
-        title: const Text(
+        title: Text(
           'Grocery',
-          style: TextStyle(color: Colors.black, fontSize: 25),
+          style: TextStyle(color: Colors.black, fontSize: 25.sp),
         ),
       ),
       body: Column(
@@ -31,7 +31,7 @@ class CartPage extends StatelessWidget {
               itemCount: context.watch<CartProvider>().food.length,
               itemBuilder: (context, index) {
                 return SizedBox(
-                  height: 60,
+                  height: 60.h,
                   child: CartTile(
                     food: context.watch<CartProvider>().food[index],
                   ),
@@ -41,22 +41,22 @@ class CartPage extends StatelessWidget {
           ),
           const Spacer(),
           Padding(
-            padding: const EdgeInsets.all(20),
+            padding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 20.h),
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                const Text(
+                Text(
                   'Total',
                   style: TextStyle(
-                    fontSize: 22,
+                    fontSize: 22.sp,
                     color: AppColor.kRedColor,
                     fontWeight: FontWeight.w600,
                   ),
                 ),
                 Text(
                   '\$${context.watch<CartProvider>().getTotalPrice().toStringAsFixed(2)}',
-                  style: const TextStyle(
-                    fontSize: 22,
+                  style: TextStyle(
+                    fontSize: 22.sp,
                     color: AppColor.kyCoalColor,
                     fontWeight: FontWeight.w600,
                   ),

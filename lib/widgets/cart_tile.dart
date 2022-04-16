@@ -1,9 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_slidable/flutter_slidable.dart';
-import 'package:provider/provider.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:zomato_app/data/food_model.dart';
 import 'package:zomato_app/pages/detail_page.dart';
-import 'package:zomato_app/providers/cart_provider.dart';
 
 class CartTile extends StatelessWidget {
   final Food food;
@@ -26,8 +24,8 @@ class CartTile extends StatelessWidget {
         );
       },
       leading: Container(
-        width: 55,
-        height: 55,
+        width: 55.w,
+        height: 55.h,
         decoration: BoxDecoration(
           color: Colors.grey,
           shape: BoxShape.circle,
@@ -42,9 +40,9 @@ class CartTile extends StatelessWidget {
         children: [
           Text(
             '${food.amount} X',
-            style: const TextStyle(color: Colors.black, fontSize: 20),
+            style: TextStyle(color: Colors.black, fontSize: 20.sp),
           ),
-          const SizedBox(width: 10),
+          SizedBox(width: 10.w),
           Expanded(
             flex: 3,
             child: Text(
@@ -53,14 +51,14 @@ class CartTile extends StatelessWidget {
               maxLines: 1,
             ),
           ),
-          const SizedBox(width: 10),
+          SizedBox(width: 10.w),
           Expanded(
             child: Text(
               '\$${food.price * food.amount}',
               overflow: TextOverflow.ellipsis,
-              maxLines: 2,
-              style: const TextStyle(
-                fontSize: 22,
+              maxLines: 1,
+              style: TextStyle(
+                fontSize: 20.sp,
                 fontWeight: FontWeight.bold,
               ),
             ),

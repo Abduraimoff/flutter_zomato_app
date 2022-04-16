@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:provider/provider.dart';
-import 'package:zomato_app/pages/detail_page.dart';
 import 'package:zomato_app/pages/root_page.dart';
 import 'package:zomato_app/providers/cart_provider.dart';
 
@@ -17,10 +17,13 @@ class MyApp extends StatelessWidget {
       providers: [
         ChangeNotifierProvider.value(value: CartProvider()),
       ],
-      child: const MaterialApp(
-        debugShowCheckedModeBanner: false,
-        home: RootPage(),
-        routes: {},
+      child: ScreenUtilInit(
+        designSize: const Size(414,896),
+        builder: (_) => const MaterialApp(
+          debugShowCheckedModeBanner: false,
+          home: RootPage(),
+          routes: {},
+        ),
       ),
     );
   }

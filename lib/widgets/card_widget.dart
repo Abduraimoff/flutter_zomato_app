@@ -1,5 +1,5 @@
-
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
 class CardWidget extends StatelessWidget {
@@ -14,7 +14,7 @@ class CardWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.symmetric(vertical: 10),
+      padding: EdgeInsets.symmetric(vertical: 10.h),
       child: Card(
         child: ListTile(
           leading: SvgPicture.asset(icon),
@@ -23,8 +23,7 @@ class CardWidget extends StatelessWidget {
             children: [
               Text(
                 title,
-                style:
-                    const TextStyle(fontSize: 19, fontWeight: FontWeight.w600),
+                style: TextStyle(fontSize: 19.sp, fontWeight: FontWeight.w600),
               ),
               const Icon(
                 Icons.arrow_forward,

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:provider/provider.dart';
 import 'package:zomato_app/app_color.dart';
 import 'package:zomato_app/data/food_model.dart';
@@ -22,7 +23,7 @@ class _DetailPageState extends State<DetailPage> {
           Stack(
             children: [
               Container(
-                height: 350,
+                height: 350.h,
                 decoration: BoxDecoration(
                   image: DecorationImage(
                     image: AssetImage(widget.food.imageUrl),
@@ -32,12 +33,12 @@ class _DetailPageState extends State<DetailPage> {
                 ),
               ),
               Positioned(
-                top: 30,
-                left: 10,
+                top: 30.h,
+                left: 10.w,
                 child: Container(
                   decoration: BoxDecoration(
                     color: AppColor.kRedColor,
-                    borderRadius: BorderRadius.circular(40),
+                    borderRadius: BorderRadius.circular(40.r),
                   ),
                   child: IconButton(
                     onPressed: () {
@@ -52,12 +53,12 @@ class _DetailPageState extends State<DetailPage> {
               ),
             ],
           ),
-          const SizedBox(height: 20),
+          SizedBox(height: 20.h),
           Center(
             child: Text(
               widget.food.name,
-              style: const TextStyle(
-                fontSize: 25,
+              style: TextStyle(
+                fontSize: 25.sp,
                 fontWeight: FontWeight.w700,
               ),
               overflow: TextOverflow.ellipsis,
@@ -65,21 +66,21 @@ class _DetailPageState extends State<DetailPage> {
               textAlign: TextAlign.center,
             ),
           ),
-          const SizedBox(height: 10),
+          SizedBox(height: 10.h),
           Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 20),
+            padding: EdgeInsets.symmetric(horizontal: 20.w),
             child: Text(
               widget.food.description,
-              style: const TextStyle(
-                fontSize: 16,
+              style: TextStyle(
+                fontSize: 16.sp,
               ),
               maxLines: 3,
               overflow: TextOverflow.ellipsis,
             ),
           ),
-          const SizedBox(height: 25),
+          SizedBox(height: 25.h),
           Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 20),
+            padding: EdgeInsets.symmetric(horizontal: 20.w),
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
@@ -112,8 +113,8 @@ class _DetailPageState extends State<DetailPage> {
                       ),
                       Text(
                         '${widget.food.amount}',
-                        style: const TextStyle(
-                          fontSize: 20,
+                        style: TextStyle(
+                          fontSize: 20.sp,
                           fontWeight: FontWeight.w500,
                         ),
                       ),
@@ -133,8 +134,8 @@ class _DetailPageState extends State<DetailPage> {
                 ),
                 Text(
                   '\$${widget.food.price * widget.food.amount}',
-                  style: const TextStyle(
-                    fontSize: 30,
+                  style: TextStyle(
+                    fontSize: 30.sp,
                     fontWeight: FontWeight.bold,
                   ),
                 )
@@ -149,18 +150,18 @@ class _DetailPageState extends State<DetailPage> {
           Navigator.pop(context);
         },
         child: Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
+          padding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 10.h),
           child: Container(
             width: double.infinity,
-            height: 70,
+            height: 70.h,
             decoration: BoxDecoration(
               color: AppColor.kRedColor,
-              borderRadius: BorderRadius.circular(30),
+              borderRadius: BorderRadius.circular(30.r),
             ),
-            child: const Center(
+            child: Center(
               child: Text(
                 'Add to cart',
-                style: TextStyle(fontSize: 25, fontWeight: FontWeight.bold),
+                style: TextStyle(fontSize: 22.sp, fontWeight: FontWeight.bold),
               ),
             ),
           ),

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
 import 'package:zomato_app/app_color.dart';
@@ -18,28 +19,28 @@ class FoodCard extends StatelessWidget {
     return GestureDetector(
       onTap: press,
       child: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
+        padding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 10.h),
         child: Container(
-          height: 340,
+          height: 352.h,
           decoration: BoxDecoration(
               color: Colors.white,
-              borderRadius: BorderRadius.circular(24),
-              boxShadow: const [
+              borderRadius: BorderRadius.circular(24.r),
+              boxShadow: [
                 BoxShadow(
                   color: Colors.black,
-                  offset: Offset(1, 1),
-                  blurRadius: 5,
+                  offset: const Offset(1, 1),
+                  blurRadius: 5.r,
                 ),
               ]),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Container(
-                height: 200,
+                height: 200.h,
                 decoration: BoxDecoration(
-                  borderRadius: const BorderRadius.only(
-                    topLeft: Radius.circular(24),
-                    topRight: Radius.circular(24),
+                  borderRadius: BorderRadius.only(
+                    topLeft: Radius.circular(24.r),
+                    topRight: Radius.circular(24.r),
                   ),
                   image: DecorationImage(
                     filterQuality: FilterQuality.low,
@@ -50,32 +51,33 @@ class FoodCard extends StatelessWidget {
                 child: Stack(
                   children: [
                     Positioned(
-                      top: 17,
-                      left: 10,
+                      top: 17.h,
+                      left: 10.w,
                       child: Container(
-                        padding: const EdgeInsets.symmetric(
-                            horizontal: 8, vertical: 7),
+                        padding: EdgeInsets.symmetric(
+                            horizontal: 8.w, vertical: 7.h),
                         decoration: BoxDecoration(
                           color: Colors.white,
                           borderRadius: BorderRadius.circular(6),
                         ),
-                        child: const Text(
+                        child: Text(
                           'Promoted',
                           style: TextStyle(
                             color: Colors.black,
-                            fontSize: 13,
+                            fontSize: 13.sp,
                             fontWeight: FontWeight.w600,
                           ),
                         ),
                       ),
                     ),
                     Positioned(
-                      top: 15,
-                      right: 10,
+                      top: 15.h,
+                      right: 10.w,
                       child: Container(
-                        height: 34,
-                        width: 34,
-                        padding: const EdgeInsets.all(7),
+                        height: 34.h,
+                        width: 34.w,
+                        padding: EdgeInsets.symmetric(
+                            horizontal: 7.w, vertical: 7.h),
                         decoration: const BoxDecoration(
                           color: Colors.white,
                           shape: BoxShape.circle,
@@ -84,11 +86,11 @@ class FoodCard extends StatelessWidget {
                       ),
                     ),
                     Positioned(
-                      bottom: 8,
-                      left: 10,
+                      bottom: 8.h,
+                      left: 10.w,
                       child: Container(
-                        padding: const EdgeInsets.symmetric(
-                            horizontal: 8, vertical: 7),
+                        padding: EdgeInsets.symmetric(
+                            horizontal: 8.w, vertical: 7.h),
                         decoration: BoxDecoration(
                           color: AppColor.kyBlueColor,
                           borderRadius: BorderRadius.circular(6),
@@ -98,15 +100,15 @@ class FoodCard extends StatelessWidget {
                           children: [
                             SvgPicture.asset(
                               'assets/icons/discount.svg',
-                              height: 15,
+                              height: 15.h,
                               color: Colors.white,
                             ),
-                            const SizedBox(width: 5),
+                            SizedBox(width: 5.w),
                             Text(
                               '${food.discount}% OFF',
-                              style: const TextStyle(
+                              style: TextStyle(
                                 color: Colors.white,
-                                fontSize: 13,
+                                fontSize: 13.sp,
                                 fontWeight: FontWeight.w600,
                               ),
                             )
@@ -115,14 +117,14 @@ class FoodCard extends StatelessWidget {
                       ),
                     ),
                     Positioned(
-                      bottom: 8,
-                      right: 10,
+                      bottom: 8.h,
+                      right: 10.w,
                       child: Container(
-                        padding: const EdgeInsets.symmetric(
-                            horizontal: 8, vertical: 7),
+                        padding: EdgeInsets.symmetric(
+                            horizontal: 8.w, vertical: 7.h),
                         decoration: BoxDecoration(
                           color: Colors.white,
-                          borderRadius: BorderRadius.circular(6),
+                          borderRadius: BorderRadius.circular(6.r),
                         ),
                         child: Row(
                           crossAxisAlignment: CrossAxisAlignment.center,
@@ -130,15 +132,15 @@ class FoodCard extends StatelessWidget {
                           children: [
                             SvgPicture.asset(
                               'assets/icons/truck.svg',
-                              height: 15,
+                              height: 15.h,
                             ),
-                            const SizedBox(width: 5),
+                            SizedBox(width: 5.w),
                             Padding(
-                              padding: const EdgeInsets.only(top: 2),
+                              padding: EdgeInsets.only(top: 2.h),
                               child: Text(
                                 '${food.deliveryTime} mins',
-                                style: const TextStyle(
-                                  fontSize: 13,
+                                style: TextStyle(
+                                  fontSize: 13.sp,
                                   fontWeight: FontWeight.w600,
                                 ),
                               ),
@@ -150,39 +152,40 @@ class FoodCard extends StatelessWidget {
                   ],
                 ),
               ),
-              const SizedBox(height: 15),
+              SizedBox(height: 15.h),
               Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 20),
+                padding: EdgeInsets.symmetric(horizontal: 20.w),
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     Text(
                       food.name,
-                      style: const TextStyle(
-                        fontSize: 23,
+                      style: TextStyle(
+                        fontSize: 23.sp,
                         fontWeight: FontWeight.w600,
                       ),
                     ),
                     Container(
-                      padding: const EdgeInsets.all(5),
+                      padding:
+                          EdgeInsets.symmetric(horizontal: 5.w, vertical: 5.h),
                       decoration: BoxDecoration(
                         color: AppColor.kyTealColor,
-                        borderRadius: BorderRadius.circular(6),
+                        borderRadius: BorderRadius.circular(6.r),
                       ),
                       child: Row(
                         children: [
                           Text(
                             '${food.stars}',
-                            style: const TextStyle(
-                              fontSize: 13,
+                            style: TextStyle(
+                              fontSize: 13.sp,
                               fontWeight: FontWeight.w600,
                               color: Colors.white,
                             ),
                           ),
-                          const Icon(
+                          Icon(
                             Icons.star,
                             color: Colors.yellow,
-                            size: 15,
+                            size: 15.w,
                           )
                         ],
                       ),
@@ -190,40 +193,40 @@ class FoodCard extends StatelessWidget {
                   ],
                 ),
               ),
-              const SizedBox(height: 10),
+              SizedBox(height: 10.h),
               Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 20),
+                padding: EdgeInsets.symmetric(horizontal: 20.w),
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     Text(
                       food.name,
-                      style: const TextStyle(
-                        fontSize: 13,
+                      style: TextStyle(
+                        fontSize: 13.sp,
                         fontWeight: FontWeight.w400,
                       ),
                     ),
-                    const Text(
+                    Text(
                       'Price Range 250-550',
                       style: TextStyle(
-                        fontSize: 13,
+                        fontSize: 13.sp,
                         fontWeight: FontWeight.w600,
                       ),
                     ),
                   ],
                 ),
               ),
-              const Padding(
-                padding: EdgeInsets.symmetric(vertical: 10, horizontal: 26),
-                child: Divider(
+              Padding(
+                padding: EdgeInsets.symmetric(vertical: 10.h, horizontal: 26.w),
+                child: const Divider(
                   color: Colors.black,
                 ),
               ),
-              const Center(
+              Center(
                 child: Text(
                   'Zomato funds environmental projects to offset\ndelivery carbon footprint',
                   style: TextStyle(
-                    fontSize: 13,
+                    fontSize: 13.sp,
                     fontWeight: FontWeight.w400,
                   ),
                 ),

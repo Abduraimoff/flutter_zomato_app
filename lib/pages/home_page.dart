@@ -1,5 +1,6 @@
 import 'package:dots_indicator/dots_indicator.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:zomato_app/app_color.dart';
 import 'package:zomato_app/data/food_model.dart';
@@ -46,7 +47,7 @@ class _HomePageState extends State<HomePage> {
       body: ListView(
         children: [
           SizedBox(
-            height: 230,
+            height: 220.h,
             child: PageView.builder(
               controller: pageController,
               itemCount: 3,
@@ -62,53 +63,52 @@ class _HomePageState extends State<HomePage> {
               decorator: DotsDecorator(
                 activeColor: AppColor.kyGreyColor,
                 size: const Size.square(9.0),
-                activeSize: const Size(18.0, 9.0),
+                activeSize: Size(18.0.w, 9.0.h),
                 activeShape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(5.0)),
+                    borderRadius: BorderRadius.circular(5.0.r)),
               ),
             ),
           ),
-          const SizedBox(height: 15),
-          const Padding(
-            padding: EdgeInsets.symmetric(horizontal: 20),
+          SizedBox(height: 15.h),
+          Padding(
+            padding: EdgeInsets.symmetric(horizontal: 20.h),
             child: Text(
               'Eat what makes you happy',
               style: TextStyle(
-                fontSize: 19,
+                fontSize: 19.sp,
                 fontWeight: FontWeight.w700,
               ),
             ),
           ),
-          const SizedBox(height: 15),
+          SizedBox(height: 15.h),
           const FoodListView(),
-          const SizedBox(height: 20),
+          SizedBox(height: 20.h),
           Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 20),
+            padding: EdgeInsets.symmetric(horizontal: 20.w),
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
-                const Text(
+                Text(
                   '127 restaurants around you',
                   style: TextStyle(
-                    fontSize: 19,
+                    fontSize: 19.sp,
                     fontWeight: FontWeight.w700,
                   ),
                 ),
                 Container(
-                  padding:
-                      const EdgeInsets.symmetric(horizontal: 8, vertical: 7),
+                  padding: EdgeInsets.symmetric(horizontal: 8.w, vertical: 7.h),
                   color: Colors.white,
                   child: Row(
                     mainAxisSize: MainAxisSize.min,
                     children: [
                       SvgPicture.asset('assets/icons/arrows.svg'),
-                      const SizedBox(width: 5),
+                      SizedBox(width: 5.w),
                       Text(
                         'Popular',
                         style: TextStyle(
                           color: Colors.black,
-                          fontSize: 13,
+                          fontSize: 13.sp,
                           fontWeight: FontWeight.w600,
                         ),
                       )
@@ -118,7 +118,7 @@ class _HomePageState extends State<HomePage> {
               ],
             ),
           ),
-          const SizedBox(height: 20),
+           SizedBox(height: 20.h),
           SingleChildScrollView(
             child: ListView.builder(
               physics: const NeverScrollableScrollPhysics(),
@@ -158,30 +158,30 @@ class _HomePageState extends State<HomePage> {
           Row(
             children: [
               const LocationWidget(),
-              const SizedBox(width: 21),
+              SizedBox(width: 5.w),
               Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Row(
-                    children: const [
+                    children: [
                       Text(
                         'Home',
                         style: TextStyle(
-                          fontSize: 17,
+                          fontSize: 17.sp,
                           fontWeight: FontWeight.w700,
                           color: AppColor.kyCoalColor,
                         ),
                       ),
-                      Icon(
+                      const Icon(
                         Icons.keyboard_arrow_down_outlined,
                         color: AppColor.kyCoalColor,
                       )
                     ],
                   ),
-                  const Text(
+                  Text(
                     'Uzbekistan,Namangan',
                     style: TextStyle(
-                      fontSize: 13,
+                      fontSize: 13.sp,
                       fontWeight: FontWeight.w400,
                       color: Colors.grey,
                     ),
@@ -209,10 +209,10 @@ class _HomePageState extends State<HomePage> {
                         builder: (context) => const ProfilePage()),
                   );
                 },
-                child: const CircleAvatar(
+                child: CircleAvatar(
                   backgroundColor: Colors.grey,
-                  radius: 25,
-                  backgroundImage: AssetImage('assets/images/food1.jpg'),
+                  radius: 25.r,
+                  backgroundImage: const AssetImage('assets/images/food1.jpg'),
                 ),
               ),
             ],

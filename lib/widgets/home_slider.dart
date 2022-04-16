@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class HomeSlider extends StatelessWidget {
   const HomeSlider({
@@ -8,16 +9,16 @@ class HomeSlider extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: const EdgeInsets.only(top: 30, right: 20, left: 20),
-      padding: const EdgeInsets.only(
-        left: 15,
-        bottom: 4,
-        top: 24,
+      margin: EdgeInsets.only(top: 30.h, right: 20.w, left: 20.w),
+      padding: EdgeInsets.only(
+        left: 15.w,
+        bottom: 4.h,
+        top: 24.h,
       ),
       width: double.infinity,
-      height: 200,
+      height: 200.h,
       decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(24),
+        borderRadius: BorderRadius.circular(24.r),
         gradient: const LinearGradient(
           colors: [
             Color(0xFFDC5A62),
@@ -30,47 +31,47 @@ class HomeSlider extends StatelessWidget {
           Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              const Text(
+              Text(
                 'Up To',
                 style: TextStyle(
-                  fontSize: 15,
+                  fontSize: 15.sp,
                   fontWeight: FontWeight.w600,
                   color: Colors.white,
                 ),
               ),
-              const SizedBox(height: 3),
-              const Text(
+              SizedBox(height: 3.h),
+              Text(
                 '70% OFF',
                 style: TextStyle(
-                  fontSize: 36,
+                  fontSize: 26.sp,
                   fontWeight: FontWeight.w700,
                   color: Colors.white,
                 ),
               ),
-              const Text(
+              Text(
                 'with free delivery',
                 style: TextStyle(
-                  fontSize: 24,
+                  fontSize: 20.sp,
                   fontWeight: FontWeight.w600,
                   color: Colors.white,
                 ),
               ),
-              const SizedBox(height: 10),
-              const Text(
+              SizedBox(height: 7.h),
+              Text(
                 'no COOKing',
                 style: TextStyle(
-                  fontSize: 24,
+                  fontSize: 20.sp,
                   fontWeight: FontWeight.w400,
                   color: Colors.white,
                 ),
               ),
               Row(
                 mainAxisAlignment: MainAxisAlignment.start,
-                children: const [
+                children: [
                   Text(
                     'July',
                     style: TextStyle(
-                      fontSize: 36,
+                      fontSize: 26.sp,
                       fontWeight: FontWeight.w400,
                       color: Colors.white,
                     ),
@@ -78,7 +79,7 @@ class HomeSlider extends StatelessWidget {
                   Icon(
                     Icons.arrow_circle_right,
                     color: Colors.white,
-                    size: 35,
+                    size: 25.h,
                   )
                 ],
               )
