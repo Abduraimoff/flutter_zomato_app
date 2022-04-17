@@ -1,7 +1,6 @@
 # zomato_app
 
-Food ordering app
-## Getting Started
+## Food ordering app
 
 
 https://user-images.githubusercontent.com/87908979/163673162-0aa72f8f-90bc-4483-8613-56f44aa0d51a.mp4
