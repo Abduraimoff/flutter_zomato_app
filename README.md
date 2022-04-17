@@ -1,6 +1,6 @@
 # zomato_app
 
-A new Flutter project.
+Food ordering app
 ## Getting Started
 
 
