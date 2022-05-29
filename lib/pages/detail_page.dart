@@ -150,6 +150,12 @@ class _DetailPageState extends State<DetailPage> {
       bottomNavigationBar: GestureDetector(
         onTap: () {
           context.read<CartProvider>().addFood(widget.food);
+          ScaffoldMessenger.of(context).showSnackBar(
+            const SnackBar(
+              content: Text('Added to cart'),
+              duration: Duration(milliseconds: 500),
+            ),
+          );
           Navigator.pop(context);
         },
         child: Padding(
