@@ -22,13 +22,16 @@ class _DetailPageState extends State<DetailPage> {
         children: [
           Stack(
             children: [
-              Container(
-                height: 350.h,
-                decoration: BoxDecoration(
-                  image: DecorationImage(
-                    image: AssetImage(widget.food.imageUrl),
-                    fit: BoxFit.cover,
-                    filterQuality: FilterQuality.low,
+              Hero(
+                tag: widget.food.name,
+                child: Container(
+                  height: 350.h,
+                  decoration: BoxDecoration(
+                    image: DecorationImage(
+                      image: AssetImage(widget.food.imageUrl),
+                      fit: BoxFit.cover,
+                      filterQuality: FilterQuality.low,
+                    ),
                   ),
                 ),
               ),

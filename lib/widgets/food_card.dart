@@ -35,121 +35,124 @@ class FoodCard extends StatelessWidget {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Container(
-                height: 200.h,
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.only(
-                    topLeft: Radius.circular(24.r),
-                    topRight: Radius.circular(24.r),
+              Hero(
+                tag: food.name,
+                child: Container(
+                  height: 200.h,
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.only(
+                      topLeft: Radius.circular(24.r),
+                      topRight: Radius.circular(24.r),
+                    ),
+                    image: DecorationImage(
+                      filterQuality: FilterQuality.low,
+                      image: AssetImage(food.imageUrl),
+                      fit: BoxFit.cover,
+                    ),
                   ),
-                  image: DecorationImage(
-                    filterQuality: FilterQuality.low,
-                    image: AssetImage(food.imageUrl),
-                    fit: BoxFit.cover,
-                  ),
-                ),
-                child: Stack(
-                  children: [
-                    Positioned(
-                      top: 17.h,
-                      left: 10.w,
-                      child: Container(
-                        padding: EdgeInsets.symmetric(
-                            horizontal: 8.w, vertical: 7.h),
-                        decoration: BoxDecoration(
-                          color: Colors.white,
-                          borderRadius: BorderRadius.circular(6),
-                        ),
-                        child: Text(
-                          'Promoted',
-                          style: TextStyle(
-                            color: Colors.black,
-                            fontSize: 13.sp,
-                            fontWeight: FontWeight.w600,
+                  child: Stack(
+                    children: [
+                      Positioned(
+                        top: 17.h,
+                        left: 10.w,
+                        child: Container(
+                          padding: EdgeInsets.symmetric(
+                              horizontal: 8.w, vertical: 7.h),
+                          decoration: BoxDecoration(
+                            color: Colors.white,
+                            borderRadius: BorderRadius.circular(6),
+                          ),
+                          child: Text(
+                            'Promoted',
+                            style: TextStyle(
+                              color: Colors.black,
+                              fontSize: 13.sp,
+                              fontWeight: FontWeight.w600,
+                            ),
                           ),
                         ),
                       ),
-                    ),
-                    Positioned(
-                      top: 15.h,
-                      right: 10.w,
-                      child: Container(
-                        height: 34.h,
-                        width: 34.w,
-                        padding: EdgeInsets.symmetric(
-                            horizontal: 7.w, vertical: 7.h),
-                        decoration: const BoxDecoration(
-                          color: Colors.white,
-                          shape: BoxShape.circle,
+                      Positioned(
+                        top: 15.h,
+                        right: 10.w,
+                        child: Container(
+                          height: 34.h,
+                          width: 34.w,
+                          padding: EdgeInsets.symmetric(
+                              horizontal: 7.w, vertical: 7.h),
+                          decoration: const BoxDecoration(
+                            color: Colors.white,
+                            shape: BoxShape.circle,
+                          ),
+                          child: SvgPicture.asset('assets/icons/bookmark.svg'),
                         ),
-                        child: SvgPicture.asset('assets/icons/bookmark.svg'),
                       ),
-                    ),
-                    Positioned(
-                      bottom: 8.h,
-                      left: 10.w,
-                      child: Container(
-                        padding: EdgeInsets.symmetric(
-                            horizontal: 8.w, vertical: 7.h),
-                        decoration: BoxDecoration(
-                          color: AppColor.kyBlueColor,
-                          borderRadius: BorderRadius.circular(6),
-                        ),
-                        child: Row(
-                          mainAxisSize: MainAxisSize.min,
-                          children: [
-                            SvgPicture.asset(
-                              'assets/icons/discount.svg',
-                              height: 15.h,
-                              color: Colors.white,
-                            ),
-                            SizedBox(width: 5.w),
-                            Text(
-                              '${food.discount}% OFF',
-                              style: TextStyle(
+                      Positioned(
+                        bottom: 8.h,
+                        left: 10.w,
+                        child: Container(
+                          padding: EdgeInsets.symmetric(
+                              horizontal: 8.w, vertical: 7.h),
+                          decoration: BoxDecoration(
+                            color: AppColor.kyBlueColor,
+                            borderRadius: BorderRadius.circular(6),
+                          ),
+                          child: Row(
+                            mainAxisSize: MainAxisSize.min,
+                            children: [
+                              SvgPicture.asset(
+                                'assets/icons/discount.svg',
+                                height: 15.h,
                                 color: Colors.white,
-                                fontSize: 13.sp,
-                                fontWeight: FontWeight.w600,
                               ),
-                            )
-                          ],
-                        ),
-                      ),
-                    ),
-                    Positioned(
-                      bottom: 8.h,
-                      right: 10.w,
-                      child: Container(
-                        padding: EdgeInsets.symmetric(
-                            horizontal: 8.w, vertical: 7.h),
-                        decoration: BoxDecoration(
-                          color: Colors.white,
-                          borderRadius: BorderRadius.circular(6.r),
-                        ),
-                        child: Row(
-                          crossAxisAlignment: CrossAxisAlignment.center,
-                          mainAxisSize: MainAxisSize.min,
-                          children: [
-                            SvgPicture.asset(
-                              'assets/icons/truck.svg',
-                              height: 15.h,
-                            ),
-                            SizedBox(width: 5.w),
-                            Padding(
-                              padding: EdgeInsets.only(top: 2.h),
-                              child: Text(
-                                '${food.deliveryTime} mins',
+                              SizedBox(width: 5.w),
+                              Text(
+                                '${food.discount}% OFF',
                                 style: TextStyle(
+                                  color: Colors.white,
                                   fontSize: 13.sp,
                                   fontWeight: FontWeight.w600,
                                 ),
-                              ),
-                            )
-                          ],
+                              )
+                            ],
+                          ),
                         ),
                       ),
-                    ),
-                  ],
+                      Positioned(
+                        bottom: 8.h,
+                        right: 10.w,
+                        child: Container(
+                          padding: EdgeInsets.symmetric(
+                              horizontal: 8.w, vertical: 7.h),
+                          decoration: BoxDecoration(
+                            color: Colors.white,
+                            borderRadius: BorderRadius.circular(6.r),
+                          ),
+                          child: Row(
+                            crossAxisAlignment: CrossAxisAlignment.center,
+                            mainAxisSize: MainAxisSize.min,
+                            children: [
+                              SvgPicture.asset(
+                                'assets/icons/truck.svg',
+                                height: 15.h,
+                              ),
+                              SizedBox(width: 5.w),
+                              Padding(
+                                padding: EdgeInsets.only(top: 2.h),
+                                child: Text(
+                                  '${food.deliveryTime} mins',
+                                  style: TextStyle(
+                                    fontSize: 13.sp,
+                                    fontWeight: FontWeight.w600,
+                                  ),
+                                ),
+                              )
+                            ],
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
                 ),
               ),
               SizedBox(height: 15.h),
